@@ -14,7 +14,7 @@
 const findMax = (arr)=>{
     let max;
     // write your code here
-    max= Number.MIN_VALUE;
+    max= arr[0];
     for(let i = 0; i < arr.length;i++)
     {
         if(arr[i] > max)
@@ -62,7 +62,7 @@ const sumNums = (arr)=>{
 
 const reverseArray = (arr)=>{
     // write your code here
-    let temp = new Array
+    let temp = []
     for(let i = arr.length-1;i>=0;i--)
     {
         temp.push(arr[i]);
