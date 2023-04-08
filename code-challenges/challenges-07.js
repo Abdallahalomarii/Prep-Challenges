@@ -22,6 +22,8 @@
 
 const objLat = (obj) => {
     // write your code here
+    return `my name is ${obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1)} ${obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1)} I am ${obj.age} YO, and I love ${obj.hobby}.`;
+
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -86,6 +88,26 @@ const objLat = (obj) => {
 
 const cvFormatter = (arr) => {
     // write your code here
+    
+                        
+    let temp = [];
+    for (let i = 0; i < arr.length; i++) {
+        const item = arr[i];
+            if (arr[i].yearsOfExperience > 1 && arr[i].lastName===null ) {
+                
+                temp.push({ fullName: `${arr[i].firstName}` , tech: `${arr[i].tech}` });
+            }
+            else if (arr[i].firstName === null && arr[i].yearsOfExperience > 1 ) {
+                temp.push({ fullName: `${arr[i].lastName}` , tech: `${arr[i].tech}` });
+
+            }
+            else if (arr[i].yearsOfExperience > 1) {
+                temp.push({ fullName: `${arr[i].firstName} ${arr[i].lastName}` , tech: `${arr[i].tech}` });
+
+
+            }
+            }
+    return temp;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -112,6 +134,51 @@ const cvFormatter = (arr) => {
 
 const applicationsStatics = (arr) => {
     // write your code here
+    let js=0;
+    let java=0;
+    let python=0;
+    let dotnet=0;
+    let appli=0;
+    let reject=0;    
+    for (let i = 0; i < arr.length; i++) {
+        const item = arr[i];
+        if (item.firstName && item.yearsOfExperience > 1)
+        {
+            if(item.tech === "JS")
+        {
+            js++;
+            appli++;
+        }
+        else if(item.tech==="Java")
+        {
+            java++;
+            appli++;
+        }
+        else if(item.tech === ".Net")
+        {
+            dotnet++;
+            appli++;
+        }
+        else if(item.tech === "Python")
+        {
+            python++;
+            appli++;
+        }
+        }
+        else {
+            appli++;
+            reject++;
+        }
+    }
+    return {
+        python_devs: python,
+        javaScript_devs: js,
+        dotNet_devs: dotnet,
+        java_devs: java,
+        totalApplicants: appli,
+        rejectedApplicants: reject 
+        };
+
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -239,6 +306,22 @@ let data = {
 
 const classesAvg = (data) => {
     // write your code here
+    for (let i = 0;i<data.grades.length;i++)
+    {
+        const classess = data.grades[i].classes;
+        classess.forEach(e => {
+            let tempavg =0;
+    
+            e.classScores.forEach(item =>{
+                tempavg+=item;
+    
+            });
+            tempavg= tempavg/e.classScores.length;
+            e.avg=Math.floor(tempavg);
+        });
+    }
+    
+    return data;
 };
 // -------------------------------------------------------------------------------------------------------
 
