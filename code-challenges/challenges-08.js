@@ -29,10 +29,13 @@
 const customerAndAge = (obj) => {
   // write your code here
   const result = [];
-  for (const [key, value] of Object.entries(obj)) {
-    result.push(`Customer Name :${key} , Age :${value}`);
-    }
-    return result;
+  var keys = Object.keys(obj);
+  keys.forEach(key => {
+    result.push(`Customer Name :${key} , Age :${obj[key]}`);
+  });
+  return result
+ 
+    
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -138,10 +141,16 @@ const getInfo = (arr) => {
 const getStudents = (arr) => {
   // write your code here
   const students = [];
-  
-    return students;
-    
-};
+  arr.forEach(student => {
+    courses.forEach(mainCourse => {
+      if (mainCourse.Students.includes(student)) {
+       students.push({Student: student , course: mainCourse.course});
+      }
+    });
+  });
+  return students;
+
+  };
 //  ------------------------------------------------------------------------------------------------------
 
 module.exports = {
