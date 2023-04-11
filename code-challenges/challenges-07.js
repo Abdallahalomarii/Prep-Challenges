@@ -22,7 +22,9 @@
 
 const objLat = (obj) => {
     // write your code here
-    return `my name is ${obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1)} ${obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1)} I am ${obj.age} YO, and I love ${obj.hobby}.`;
+    return `my name is ${obj.firstName.charAt(0).toUpperCase() + 
+        obj.firstName.slice(1)} ${obj.lastName.charAt(0).toUpperCase() + 
+            obj.lastName.slice(1)} I am ${obj.age} YO, and I love ${obj.hobby}.`;
 
 };
 // -------------------------------------------------------------------------------------------------------
@@ -92,7 +94,6 @@ const cvFormatter = (arr) => {
                         
     let temp = [];
     for (let i = 0; i < arr.length; i++) {
-        const item = arr[i];
             if (arr[i].yearsOfExperience > 1 && arr[i].lastName===null ) {
                 
                 temp.push({ fullName: `${arr[i].firstName}` , tech: `${arr[i].tech}` });
@@ -320,7 +321,7 @@ const classesAvg = (data) => {
             e.avg=Math.floor(tempavg);
         });
     }
-    
+
     return data;
 };
 // -------------------------------------------------------------------------------------------------------
