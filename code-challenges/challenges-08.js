@@ -138,12 +138,7 @@ const getInfo = (arr) => {
 const getStudents = (arr) => {
   // write your code here
   const students = [];
-  for (const student of arr) {
-    const course = student.split(' ')[1];
-    const studentName = student.split(' ')[0];
-    const studentInfo = { Student: studentName};
-    students.push(studentInfo);
-    }
+  
     return students;
     
 };
